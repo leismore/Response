@@ -47,6 +47,12 @@ module.exports = class Response
     this.errorServer(500, error);
   }
 
+  // 503 - Service Unavailable
+  res503(error)
+  {
+    this.errorServer(503, error);
+  }
+
   // 204 - No Content
   res204()
   {

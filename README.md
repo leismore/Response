@@ -56,6 +56,12 @@ resp.errorClient(415);
 
 * error:      Error object
 
+### res503
+
+`res503(error)`
+
+* error:      Error object
+
 ### res204
 
 `res204()`
