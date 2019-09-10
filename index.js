@@ -35,6 +35,12 @@ module.exports = class Response
     this.res.sendStatus(statusCode);
   }
 
+  // 403 - Forbidden
+  res403()
+  {
+    this.errorClient(403);
+  }
+
   // 500 - Internal Server Error
   res500(error)
   {

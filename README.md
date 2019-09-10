@@ -46,6 +46,10 @@ resp.errorClient(415);
 
 * statusCode: HTTP status code
 
+### res403
+
+`res403()`
+
 ### res500
 
 `res500(error)`
