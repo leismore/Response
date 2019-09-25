@@ -41,6 +41,15 @@ module.exports = class Response
     this.errorClient(403);
   }
 
+  /**
+   * @param  {string[]} allowed - Allowed methods
+   */
+  res405(allowed)
+  {
+    this.res.set('Allow', allowed.join(', '));
+    this.errorClient(405);
+  }
+
   // 500 - Internal Server Error
   res500(error)
   {

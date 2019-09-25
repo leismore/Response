@@ -50,6 +50,12 @@ resp.errorClient(415);
 
 `res403()`
 
+### res405
+
+`res405(allowed)`
+
+* allowed: {string[]} Allowed HTTP methods. Example: `['POST', 'GET']`
+
 ### res500
 
 `res500(error)`
