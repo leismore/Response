@@ -8,12 +8,12 @@
  *   1 - Server-side error
  */
 
-'use strict';
+import * as express from 'express';
 
-module.exports = class Response
+class Response
 {
 
-  constructor(res)
+  constructor(res: express.Response)
   {
     Object.defineProperty(this, 'res', {
       value:        res,
@@ -68,4 +68,6 @@ module.exports = class Response
     this.res.sendStatus(204);
   }
 
-};
+}
+
+export {Response};
