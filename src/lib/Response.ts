@@ -13,9 +13,9 @@
 import * as express    from 'express';
 import {LMError}       from '@leismore/lmerror';
 import {Res}           from './type/Res';
-import {ptnStatusCode} from './patterns';
+import {filter_res}    from './filter_res';
 
-abstract class Response
+class Response
 {
   protected readonly res:express.Response;
 
@@ -26,7 +26,6 @@ abstract class Response
 
   public sendErr(error:Error)
   {
-
     if (error instanceof LMError)
     {
       this.sendLMError(error);
