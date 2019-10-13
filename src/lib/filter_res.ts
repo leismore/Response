@@ -1,13 +1,13 @@
 /**
- * filter_res function - Test and normalize type Res.
- * @param  res   Type Res data
- * @return {Res} Valid Res data
- * @throw  {ResError} 1 / 2 / 3    
+ * filter_res function - Test and normalize type Res (HTTP response data).
+ * @param  {Res}      res
+ * @return {Res}
+ * @throw  {ResError}      1 / 2 / 3
  */
 
-import {Res} from './type/Res';
+import {Res}           from './type/Res';
 import {ptnStatusCode} from './patterns';
-import {ResError} from './ResError';
+import {ResError}      from './ResError';
 
 function filter_res(res:Res):Res
 {
