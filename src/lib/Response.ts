@@ -55,6 +55,7 @@ class Response
     console.error( now.toISOString() + ' - ' + String(error) );
     this.res.sendStatus(500);
     process.exitCode = 1;
+    throw error;
   }
 
   private sendHttpError(error:HttpError):void
@@ -69,7 +70,7 @@ class Response
     else
       { this.res.sendStatus(error.statusCode); }
     if (error.statusCode >= 500 && error.statusCode <= 599)
-      { process.exitCode = 1; }
+      { process.exitCode = 1; throw error; }
   }
 
   private sendLMError(error:LMError):void
@@ -79,6 +80,7 @@ class Response
       console.error( String(error) );
       this.res.sendStatus(500);
       process.exitCode = 1;
+      throw error;
     }
     else
     {
@@ -91,7 +93,7 @@ class Response
       else
         { this.res.status(Number(error.response.statusCode)).send(error.response.body); }
       if ( Number(error.response.statusCode) >= 500 && Number(error.response.statusCode) <= 599 )
-        { process.exitCode = 1; }
+        { process.exitCode = 1; throw error;}
     }
   }
 

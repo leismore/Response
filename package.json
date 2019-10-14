@@ -1,6 +1,6 @@
 {
   "name": "@leismore/response",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A HTTP response class for NodeJS.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/leismore/Response#readme",
   "dependencies": {
-    "@leismore/lmerror": "^4.0.0",
+    "@leismore/lmerror": "^4.0.1",
     "express": "^4.17.1",
     "http-errors": "^1.7.3"
   },
