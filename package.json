@@ -1,6 +1,6 @@
 {
   "name": "@leismore/response",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "A HTTP response class for NodeJS.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
