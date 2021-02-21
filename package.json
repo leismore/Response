@@ -1,6 +1,6 @@
 {
   "name": "@leismore/response",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "description": "A HTTP response class for NodeJS.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -21,7 +21,7 @@
     "LMError"
   ],
   "author": "Kyle Chine",
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "bugs": {
     "url": "https://github.com/leismore/Response/issues"
   },
