@@ -97,4 +97,4 @@ class Response
 
 }
 
-export {Response};
+export {Response, ResType as ResData};
