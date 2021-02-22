@@ -10,12 +10,14 @@ Buy me a coffee via [![PayPal Donation](https://www.paypalobjects.com/en_AU/i/bt
 
 `npm install @leismore/response`
 
+## Test
+
+`npm test`
+
 ## Example
 
 ```typescript
 import {Response} from '@leismore/response';
-// or
-const Response = require('@leismore/response').Response;
 
 // In Express.js routing handler
 function(req, res, next)
@@ -42,20 +44,40 @@ Response
   protected readonly res:ResExpress;  // Response in Express.js
 
   public constructor(res:ResExpress)  // Response in Express.js
-  public send(response:ResType):void
+
+ /**
+   * Send HTTP response
+   * @param   response   - HTTP response data
+   * @throw   {ResError} - 1/2/3
+   */
+  public send(response:ResType):void    // ResType = ResData
+  
   public sendERROR(error:Error):void
 }
 
-type Res = {                                            // HTTP response
+/**
+ * ResError
+ *   1  invalid_http_statusCode
+ *   2  invalid_http_header
+ *   3  invalid_http_body
+ */
+ResError extends LMError
+{
+  public constructor(message:string, code:string, previous?:Error)
+}
+
+type ResData = {                                        // HTTP response (alias: ResType)
   readonly statusCode:  string,                         // HTTP response status code
            headers?:   {readonly [key:string]: string}, // HTTP headers
            body?:       any                             // HTTP body
 };
 ```
 
+Refer to [LMError / @leismore/lmerror](https://www.npmjs.com/package/@leismore/lmerror).
+
 ## License
 
-MIT
+GNU Affero General Public License v3.0
 
 ## Authors
 
