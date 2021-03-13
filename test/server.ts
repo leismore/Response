@@ -1,5 +1,5 @@
 import express = require('express');
-import { Response as Resp, ResData as RespData, ResError as RespError } from '../src/index';
+import { LMResponse as Resp, LMResponseData as RespData, LMResponseError as RespError } from '../src/index';
 import { LMError } from '@leismore/lmerror';
 import createHttpError = require('http-errors');
 

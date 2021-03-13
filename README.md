@@ -17,21 +17,21 @@ Buy me a coffee via [![PayPal Donation](https://www.paypalobjects.com/en_AU/i/bt
 ## Example
 
 ```typescript
-import {Response} from '@leismore/response';
+import { LMResponse, LMResponseData } from '@leismore/response';
 
 // In Express.js routing handler
 function(req, res, next)
 {
-  const resp = new Response(res);
+  const resp = new LMResponse(res);
 
-  let data = {statusCode: '200', headers: {'Content-Type': 'application/json'}, body: {'result': 'OK'}};
+  let data:LMResponseData = {statusCode: '200', headers: {'Content-Type': 'application/json'}, body: {'result': 'OK'}};
   resp.send(data);
 }
 
 // In Express.js error handler
 function(error, req, res, next)
 {
-  const resp = new Response(res);
+  const resp = new LMResponse(res);
   resp.sendERROR(error);
 }
 ```
@@ -39,7 +39,7 @@ function(error, req, res, next)
 ## API
 
 ```typescript
-Response
+LMResponse
 {
   protected readonly res:ResExpress;  // Response in Express.js
 
@@ -48,25 +48,25 @@ Response
  /**
    * Send HTTP response
    * @param   response   - HTTP response data
-   * @throw   {ResError} - 1/2/3
+   * @throw   {LMResponseError} - 1/2/3
    */
-  public send(response:ResType):void    // ResType = ResData
+  public send(response:LMResponseData):void
   
   public sendERROR(error:Error):void
 }
 
 /**
- * ResError
+ * LMResponseError
  *   1  invalid_http_statusCode
  *   2  invalid_http_header
  *   3  invalid_http_body
  */
-ResError extends LMError
+LMResponseError extends LMError
 {
   public constructor(message:string, code:string, previous?:Error)
 }
 
-type ResData = {                                        // HTTP response (alias: ResType)
+type LMResponseData = {                                 // HTTP response
   readonly statusCode:  string,                         // HTTP response status code
            headers?:   {readonly [key:string]: string}, // HTTP headers
            body?:       any                             // HTTP body
