@@ -5,4 +5,4 @@
 import {Response, ResData} from './lib/Response';
 import {ResError} from './lib/ResError';
 
-export {Response, ResData, ResError};
+export { Response as LMResponse, ResData as LMResponseData, ResError as LMResponseError };
