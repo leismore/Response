@@ -1,3 +1,10 @@
+**OBSOLETED PACKAGE!!! Please use [@leismore/lmos-nodejs-lmresponse](https://github.com/leismore/lmos-nodejs-lmresponse) instead!!!**
+
+
+
+
+
+
 # Response Class
 
 Response class - A HTTP Response class for LMOS NodeJS projects.
